@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ListGroup, Tab, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './ToDoList.css';
+import './ToDoList.css';  // Assuming additional styling is here
 
 const TodoList = () => {
   // Static array of ToDo items
   const initialTodos = [
-    { title: 'Todo 1', description: 'This is the first ToDo item', dueDate: '2024-10-20' },
-    { title: 'Todo 2', description: 'This is the second ToDo item', dueDate: '2024-10-15' },
-    { title: 'Todo 3', description: 'This is the third ToDo item', dueDate: '2024-10-10' },
-    { title: 'Todo 4', description: 'This is the fourth ToDo item', dueDate: '2024-10-08' },
+    { title: 'Todo 1', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.', dueDate: '2024-10-20' },
+    { title: 'Todo 2', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.', dueDate: '2024-10-15' },
+    { title: 'Todo 3', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.', dueDate: '2024-10-10' },
+    { title: 'Todo 4', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.', dueDate: '2024-10-08' },
   ];
 
   const [todos, setTodos] = useState(initialTodos);
@@ -79,11 +79,13 @@ const TodoList = () => {
                 <Tab.Content>
                   {todos.map((item, index) => (
                     <Tab.Pane eventKey={`#${index}`} key={index} role="tabpanel">
-                      <h4 contentEditable>{item.title}</h4>
-                      <p contentEditable>{item.description}</p>
+                      <Form.Group>
+                        <Form.Label>Description</Form.Label>
+                        <p contentEditable>{item.description}</p> {/* contentEditable for description */}
+                      </Form.Group>
                       <Form.Group controlId={`dueDate-${index}`}>
                         <Form.Label>Due Date</Form.Label>
-                        <Form.Control type="date" defaultValue={item.dueDate} readOnly />
+                        <Form.Control type="date" defaultValue={item.dueDate} />
                       </Form.Group>
                     </Tab.Pane>
                   ))}
