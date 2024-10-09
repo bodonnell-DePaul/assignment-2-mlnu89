@@ -80,7 +80,6 @@ const TodoList = () => {
                   {todos.map((item, index) => (
                     <Tab.Pane eventKey={`#${index}`} key={index} role="tabpanel">
                       <Form.Group>
-                        <Form.Label>Description</Form.Label>
                         <p contentEditable>{item.description}</p> {/* contentEditable for description */}
                       </Form.Group>
                       <Form.Group controlId={`dueDate-${index}`}>
