@@ -1,0 +1,25 @@
+.form-container {
+    background-color: lightgreen;
+    border-radius: 5px;
+  }
+  
+  .list-group-item-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .list-group-item-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .list-group-item-warning {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .list-group-item-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
